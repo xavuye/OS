@@ -1,0 +1,26 @@
+; Faktorialas N! su ciklu (CMP + JG).
+; 00: N (skaitliukas, mazinamas iki 1)
+; 01: rezultatas (pradzioje 1), po darbo cia N!
+; 02: konstanta 1
+; Pakeitus DW 6 i DW 13 - 13! netelpa i 32 bitus -> PI=4 (perpildymas).
+$JOB
+ID 0006
+PAGES 02
+DATASEG 00
+DW 6
+DW 1
+DW 1
+CODESEG 10
+LA01
+LB00
+MUL
+SA01
+LA00
+LB02
+SUB
+SA00
+CMP
+JG10
+PD00
+HALT
+$END
